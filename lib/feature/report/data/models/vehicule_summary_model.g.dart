@@ -1,0 +1,105 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'vehicule_summary_model.dart';
+
+// **************************************************************************
+// CopyWithGenerator
+// **************************************************************************
+
+abstract class _$VehiculeSummaryModelCWProxy {
+  VehiculeSummaryModel total(double total);
+
+  VehiculeSummaryModel vehiculeTypeEntity(
+      VehiculeTypeModel? vehiculeTypeEntity);
+
+  VehiculeSummaryModel count(int count);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `VehiculeSummaryModel(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// VehiculeSummaryModel(...).copyWith(id: 12, name: "My name")
+  /// ````
+  VehiculeSummaryModel call({
+    double? total,
+    VehiculeTypeModel? vehiculeTypeEntity,
+    int? count,
+  });
+}
+
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfVehiculeSummaryModel.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfVehiculeSummaryModel.copyWith.fieldName(...)`
+class _$VehiculeSummaryModelCWProxyImpl
+    implements _$VehiculeSummaryModelCWProxy {
+  const _$VehiculeSummaryModelCWProxyImpl(this._value);
+
+  final VehiculeSummaryModel _value;
+
+  @override
+  VehiculeSummaryModel total(double total) => this(total: total);
+
+  @override
+  VehiculeSummaryModel vehiculeTypeEntity(
+          VehiculeTypeModel? vehiculeTypeEntity) =>
+      this(vehiculeTypeEntity: vehiculeTypeEntity);
+
+  @override
+  VehiculeSummaryModel count(int count) => this(count: count);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `VehiculeSummaryModel(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// VehiculeSummaryModel(...).copyWith(id: 12, name: "My name")
+  /// ````
+  VehiculeSummaryModel call({
+    Object? total = const $CopyWithPlaceholder(),
+    Object? vehiculeTypeEntity = const $CopyWithPlaceholder(),
+    Object? count = const $CopyWithPlaceholder(),
+  }) {
+    return VehiculeSummaryModel(
+      total: total == const $CopyWithPlaceholder() || total == null
+          ? _value.total
+          // ignore: cast_nullable_to_non_nullable
+          : total as double,
+      vehiculeTypeEntity: vehiculeTypeEntity == const $CopyWithPlaceholder()
+          ? _value.vehiculeTypeEntity
+          // ignore: cast_nullable_to_non_nullable
+          : vehiculeTypeEntity as VehiculeTypeModel?,
+      count: count == const $CopyWithPlaceholder() || count == null
+          ? _value.count
+          // ignore: cast_nullable_to_non_nullable
+          : count as int,
+    );
+  }
+}
+
+extension $VehiculeSummaryModelCopyWith on VehiculeSummaryModel {
+  /// Returns a callable class that can be used as follows: `instanceOfVehiculeSummaryModel.copyWith(...)` or like so:`instanceOfVehiculeSummaryModel.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$VehiculeSummaryModelCWProxy get copyWith =>
+      _$VehiculeSummaryModelCWProxyImpl(this);
+}
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+VehiculeSummaryModel _$VehiculeSummaryModelFromJson(
+        Map<String, dynamic> json) =>
+    VehiculeSummaryModel(
+      total: (json['total'] as num?)?.toDouble() ?? 0.0,
+      vehiculeTypeEntity: VehiculeSummaryModel._vehiculeTypeFromJson(
+          json['vehiculeTypeEntity'] as Map<String, dynamic>?),
+      count: (json['count'] as num?)?.toInt() ?? 0,
+    );
+
+Map<String, dynamic> _$VehiculeSummaryModelToJson(
+        VehiculeSummaryModel instance) =>
+    <String, dynamic>{
+      'total': instance.total,
+      'vehiculeTypeEntity':
+          VehiculeSummaryModel._vehiculeTypeToJson(instance.vehiculeTypeEntity),
+      'count': instance.count,
+    };

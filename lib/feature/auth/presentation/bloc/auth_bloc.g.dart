@@ -1,0 +1,79 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'auth_bloc.dart';
+
+// **************************************************************************
+// CopyWithGenerator
+// **************************************************************************
+
+abstract class _$AuthStateCWProxy {
+  AuthState loginState(AuthenticationState? loginState);
+
+  AuthState message(String? message);
+
+  AuthState username(String? username);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `AuthState(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// AuthState(...).copyWith(id: 12, name: "My name")
+  /// ````
+  AuthState call({
+    AuthenticationState? loginState,
+    String? message,
+    String? username,
+  });
+}
+
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfAuthState.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfAuthState.copyWith.fieldName(...)`
+class _$AuthStateCWProxyImpl implements _$AuthStateCWProxy {
+  const _$AuthStateCWProxyImpl(this._value);
+
+  final AuthState _value;
+
+  @override
+  AuthState loginState(AuthenticationState? loginState) =>
+      this(loginState: loginState);
+
+  @override
+  AuthState message(String? message) => this(message: message);
+
+  @override
+  AuthState username(String? username) => this(username: username);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `AuthState(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// AuthState(...).copyWith(id: 12, name: "My name")
+  /// ````
+  AuthState call({
+    Object? loginState = const $CopyWithPlaceholder(),
+    Object? message = const $CopyWithPlaceholder(),
+    Object? username = const $CopyWithPlaceholder(),
+  }) {
+    return AuthState(
+      loginState: loginState == const $CopyWithPlaceholder()
+          ? _value.loginState
+          // ignore: cast_nullable_to_non_nullable
+          : loginState as AuthenticationState?,
+      message: message == const $CopyWithPlaceholder()
+          ? _value.message
+          // ignore: cast_nullable_to_non_nullable
+          : message as String?,
+      username: username == const $CopyWithPlaceholder()
+          ? _value.username
+          // ignore: cast_nullable_to_non_nullable
+          : username as String?,
+    );
+  }
+}
+
+extension $AuthStateCopyWith on AuthState {
+  /// Returns a callable class that can be used as follows: `instanceOfAuthState.copyWith(...)` or like so:`instanceOfAuthState.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$AuthStateCWProxy get copyWith => _$AuthStateCWProxyImpl(this);
+}

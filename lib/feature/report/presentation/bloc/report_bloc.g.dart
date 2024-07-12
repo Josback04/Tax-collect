@@ -1,0 +1,110 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'report_bloc.dart';
+
+// **************************************************************************
+// CopyWithGenerator
+// **************************************************************************
+
+abstract class _$ReportStateCWProxy {
+  ReportState paymentList(List<PaymentEntity> paymentList);
+
+  ReportState vehiculeSummaryList(
+      List<VehiculeSummaryEntity> vehiculeSummaryList);
+
+  ReportState totalAmount(double totalAmount);
+
+  ReportState dateTime(DateTime? dateTime);
+
+  ReportState methodSummaryList(List<MethodSummaryEntity> methodSummaryList);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ReportState(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// ReportState(...).copyWith(id: 12, name: "My name")
+  /// ````
+  ReportState call({
+    List<PaymentEntity>? paymentList,
+    List<VehiculeSummaryEntity>? vehiculeSummaryList,
+    double? totalAmount,
+    DateTime? dateTime,
+    List<MethodSummaryEntity>? methodSummaryList,
+  });
+}
+
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfReportState.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfReportState.copyWith.fieldName(...)`
+class _$ReportStateCWProxyImpl implements _$ReportStateCWProxy {
+  const _$ReportStateCWProxyImpl(this._value);
+
+  final ReportState _value;
+
+  @override
+  ReportState paymentList(List<PaymentEntity> paymentList) =>
+      this(paymentList: paymentList);
+
+  @override
+  ReportState vehiculeSummaryList(
+          List<VehiculeSummaryEntity> vehiculeSummaryList) =>
+      this(vehiculeSummaryList: vehiculeSummaryList);
+
+  @override
+  ReportState totalAmount(double totalAmount) => this(totalAmount: totalAmount);
+
+  @override
+  ReportState dateTime(DateTime? dateTime) => this(dateTime: dateTime);
+
+  @override
+  ReportState methodSummaryList(List<MethodSummaryEntity> methodSummaryList) =>
+      this(methodSummaryList: methodSummaryList);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ReportState(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// ReportState(...).copyWith(id: 12, name: "My name")
+  /// ````
+  ReportState call({
+    Object? paymentList = const $CopyWithPlaceholder(),
+    Object? vehiculeSummaryList = const $CopyWithPlaceholder(),
+    Object? totalAmount = const $CopyWithPlaceholder(),
+    Object? dateTime = const $CopyWithPlaceholder(),
+    Object? methodSummaryList = const $CopyWithPlaceholder(),
+  }) {
+    return ReportState(
+      paymentList:
+          paymentList == const $CopyWithPlaceholder() || paymentList == null
+              ? _value.paymentList
+              // ignore: cast_nullable_to_non_nullable
+              : paymentList as List<PaymentEntity>,
+      vehiculeSummaryList:
+          vehiculeSummaryList == const $CopyWithPlaceholder() ||
+                  vehiculeSummaryList == null
+              ? _value.vehiculeSummaryList
+              // ignore: cast_nullable_to_non_nullable
+              : vehiculeSummaryList as List<VehiculeSummaryEntity>,
+      totalAmount:
+          totalAmount == const $CopyWithPlaceholder() || totalAmount == null
+              ? _value.totalAmount
+              // ignore: cast_nullable_to_non_nullable
+              : totalAmount as double,
+      dateTime: dateTime == const $CopyWithPlaceholder()
+          ? _value.dateTime
+          // ignore: cast_nullable_to_non_nullable
+          : dateTime as DateTime?,
+      methodSummaryList: methodSummaryList == const $CopyWithPlaceholder() ||
+              methodSummaryList == null
+          ? _value.methodSummaryList
+          // ignore: cast_nullable_to_non_nullable
+          : methodSummaryList as List<MethodSummaryEntity>,
+    );
+  }
+}
+
+extension $ReportStateCopyWith on ReportState {
+  /// Returns a callable class that can be used as follows: `instanceOfReportState.copyWith(...)` or like so:`instanceOfReportState.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$ReportStateCWProxy get copyWith => _$ReportStateCWProxyImpl(this);
+}
