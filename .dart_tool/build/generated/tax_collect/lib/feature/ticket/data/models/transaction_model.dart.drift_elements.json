@@ -1,0 +1,1 @@
+{"valid_import":true,"imports":[{"uri":"package:tax_collect/feature/ticket/domain/entities/transaction.dart","transitive":false},{"uri":"package:json_annotation/json_annotation.dart","transitive":false},{"uri":"package:copy_with_extension/copy_with_extension.dart","transitive":false}],"elements":[]}

@@ -1,0 +1,1 @@
+{"valid_import":true,"imports":[{"uri":"package:drift/drift.dart","transitive":false},{"uri":"package:tax_collect/core/data/database/table/vehicule_type_table.dart","transitive":false}],"elements":[{"kind":"table","name":"payment_table","dart_name":"PaymentTable"}]}

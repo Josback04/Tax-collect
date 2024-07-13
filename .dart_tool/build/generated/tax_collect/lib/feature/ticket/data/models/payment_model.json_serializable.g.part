@@ -1,0 +1,30 @@
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+PaymentModel _$PaymentModelFromJson(Map<String, dynamic> json) => PaymentModel(
+      createdAt: json['createdAt'] == null
+          ? null
+          : DateTime.parse(json['createdAt'] as String),
+      id: (json['id'] as num?)?.toInt(),
+      plateNumber: json['plate_number'] as String?,
+      method: json['method'] as String?,
+      amount: (json['amount'] as num?)?.toDouble(),
+      reference: json['reference'] as String?,
+      vehiculeType: (json['vehicule_type'] as num?)?.toInt(),
+      vehiculeTypeEntity: PaymentModel._vehiculeTypeFromJson(
+          json['vehiculeTypeEntity'] as Map<String, dynamic>?),
+    );
+
+Map<String, dynamic> _$PaymentModelToJson(PaymentModel instance) =>
+    <String, dynamic>{
+      'createdAt': instance.createdAt?.toIso8601String(),
+      'id': instance.id,
+      'plate_number': instance.plateNumber,
+      'method': instance.method,
+      'amount': instance.amount,
+      'vehicule_type': instance.vehiculeType,
+      'reference': instance.reference,
+      'vehiculeTypeEntity':
+          PaymentModel._vehiculeTypeToJson(instance.vehiculeTypeEntity),
+    };

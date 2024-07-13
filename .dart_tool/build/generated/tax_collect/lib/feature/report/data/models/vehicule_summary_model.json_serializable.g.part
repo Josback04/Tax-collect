@@ -1,0 +1,21 @@
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+VehiculeSummaryModel _$VehiculeSummaryModelFromJson(
+        Map<String, dynamic> json) =>
+    VehiculeSummaryModel(
+      total: (json['total'] as num?)?.toDouble() ?? 0.0,
+      vehiculeTypeEntity: VehiculeSummaryModel._vehiculeTypeFromJson(
+          json['vehiculeTypeEntity'] as Map<String, dynamic>?),
+      count: (json['count'] as num?)?.toInt() ?? 0,
+    );
+
+Map<String, dynamic> _$VehiculeSummaryModelToJson(
+        VehiculeSummaryModel instance) =>
+    <String, dynamic>{
+      'total': instance.total,
+      'vehiculeTypeEntity':
+          VehiculeSummaryModel._vehiculeTypeToJson(instance.vehiculeTypeEntity),
+      'count': instance.count,
+    };

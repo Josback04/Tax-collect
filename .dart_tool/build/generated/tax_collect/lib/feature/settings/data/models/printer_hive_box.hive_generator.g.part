@@ -1,0 +1,67 @@
+// **************************************************************************
+// TypeAdapterGenerator
+// **************************************************************************
+
+class PrinterHiveBoxAdapter extends TypeAdapter<PrinterHiveBox> {
+  @override
+  final int typeId = 1;
+
+  @override
+  PrinterHiveBox read(BinaryReader reader) {
+    final numOfFields = reader.readByte();
+    final fields = <int, dynamic>{
+      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
+    };
+    return PrinterHiveBox(
+      id: fields[0] as int?,
+      deviceName: fields[1] as String?,
+      address: fields[2] as String?,
+      port: fields[3] as String?,
+      vendorId: fields[4] as String?,
+      productId: fields[5] as String?,
+      isBle: fields[6] as bool?,
+      state: fields[7] as bool?,
+      paperSize: fields[8] as int?,
+      reconnect: fields[9] as bool?,
+      printerType: fields[10] as String?,
+    );
+  }
+
+  @override
+  void write(BinaryWriter writer, PrinterHiveBox obj) {
+    writer
+      ..writeByte(11)
+      ..writeByte(0)
+      ..write(obj.id)
+      ..writeByte(1)
+      ..write(obj.deviceName)
+      ..writeByte(2)
+      ..write(obj.address)
+      ..writeByte(3)
+      ..write(obj.port)
+      ..writeByte(4)
+      ..write(obj.vendorId)
+      ..writeByte(5)
+      ..write(obj.productId)
+      ..writeByte(6)
+      ..write(obj.isBle)
+      ..writeByte(7)
+      ..write(obj.state)
+      ..writeByte(8)
+      ..write(obj.paperSize)
+      ..writeByte(9)
+      ..write(obj.reconnect)
+      ..writeByte(10)
+      ..write(obj.printerType);
+  }
+
+  @override
+  int get hashCode => typeId.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is PrinterHiveBoxAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
+}

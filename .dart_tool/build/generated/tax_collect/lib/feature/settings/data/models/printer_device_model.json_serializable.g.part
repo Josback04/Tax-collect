@@ -1,0 +1,37 @@
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+PrinterDeviceModel _$PrinterDeviceModelFromJson(Map<String, dynamic> json) =>
+    PrinterDeviceModel(
+      id: (json['id'] as num?)?.toInt(),
+      deviceName: json['deviceName'] as String?,
+      address: json['address'] as String?,
+      port: json['port'] as String?,
+      vendorId: json['vendorId'] as String?,
+      productId: json['productId'] as String?,
+      isBle: json['isBle'] as bool?,
+      state: json['state'] as bool?,
+      typePrinter:
+          $enumDecodeNullable(_$PrinterTypeEnumMap, json['typePrinter']) ??
+              PrinterType.bluetooth,
+    );
+
+Map<String, dynamic> _$PrinterDeviceModelToJson(PrinterDeviceModel instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'deviceName': instance.deviceName,
+      'address': instance.address,
+      'port': instance.port,
+      'vendorId': instance.vendorId,
+      'productId': instance.productId,
+      'isBle': instance.isBle,
+      'state': instance.state,
+      'typePrinter': _$PrinterTypeEnumMap[instance.typePrinter]!,
+    };
+
+const _$PrinterTypeEnumMap = {
+  PrinterType.bluetooth: 'bluetooth',
+  PrinterType.usb: 'usb',
+  PrinterType.network: 'network',
+};

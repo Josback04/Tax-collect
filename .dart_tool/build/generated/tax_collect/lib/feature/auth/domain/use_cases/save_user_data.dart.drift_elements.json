@@ -1,0 +1,1 @@
+{"valid_import":true,"imports":[{"uri":"package:tax_collect/core/usecase/usecase_future.dart","transitive":false},{"uri":"package:tax_collect/feature/auth/domain/repositories/auth_repository.dart","transitive":false},{"uri":"package:tax_collect/feature/auth/domain/entities/login_params.dart","transitive":false}],"elements":[]}

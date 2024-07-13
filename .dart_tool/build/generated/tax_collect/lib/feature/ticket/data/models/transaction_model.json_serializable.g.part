@@ -1,0 +1,25 @@
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+TransactionModel _$TransactionModelFromJson(Map<String, dynamic> json) =>
+    TransactionModel(
+      reference: json['reference'] as String?,
+      amount: json['amount'] as String?,
+      amountCustomer: json['amountCustomer'] as String?,
+      currency: json['currency'] as String?,
+      createdAt: json['createdAt'] as String?,
+      status: json['status'] as String?,
+      channel: json['channel'] as String?,
+    );
+
+Map<String, dynamic> _$TransactionModelToJson(TransactionModel instance) =>
+    <String, dynamic>{
+      'reference': instance.reference,
+      'amount': instance.amount,
+      'amountCustomer': instance.amountCustomer,
+      'currency': instance.currency,
+      'createdAt': instance.createdAt,
+      'status': instance.status,
+      'channel': instance.channel,
+    };

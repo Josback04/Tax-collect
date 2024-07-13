@@ -1,0 +1,219 @@
+// **************************************************************************
+// CopyWithGenerator
+// **************************************************************************
+
+abstract class _$SettingsStateCWProxy {
+  SettingsState selectedPrinterDevice(
+      PrinterDeviceModel? selectedPrinterDevice);
+
+  SettingsState printerDeviceModelList(
+      List<PrinterDeviceModel> printerDeviceModelList);
+
+  SettingsState message(String? message);
+
+  SettingsState port(String? port);
+
+  SettingsState ipAddress(String? ipAddress);
+
+  SettingsState ble(bool? ble);
+
+  SettingsState reconnect(bool? reconnect);
+
+  SettingsState paperSize(PaperSize? paperSize);
+
+  SettingsState printerType(PrinterType? printerType);
+
+  SettingsState isConnected(bool? isConnected);
+
+  SettingsState btStatus(BTStatus btStatus);
+
+  SettingsState usbStatus(USBStatus usbStatus);
+
+  SettingsState tcpStatus(TCPStatus tcpStatus);
+
+  SettingsState pendingPrinterTask(List<int>? pendingPrinterTask);
+
+  SettingsState showOption(bool showOption);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `SettingsState(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// SettingsState(...).copyWith(id: 12, name: "My name")
+  /// ````
+  SettingsState call({
+    PrinterDeviceModel? selectedPrinterDevice,
+    List<PrinterDeviceModel>? printerDeviceModelList,
+    String? message,
+    String? port,
+    String? ipAddress,
+    bool? ble,
+    bool? reconnect,
+    PaperSize? paperSize,
+    PrinterType? printerType,
+    bool? isConnected,
+    BTStatus? btStatus,
+    USBStatus? usbStatus,
+    TCPStatus? tcpStatus,
+    List<int>? pendingPrinterTask,
+    bool? showOption,
+  });
+}
+
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfSettingsState.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfSettingsState.copyWith.fieldName(...)`
+class _$SettingsStateCWProxyImpl implements _$SettingsStateCWProxy {
+  const _$SettingsStateCWProxyImpl(this._value);
+
+  final SettingsState _value;
+
+  @override
+  SettingsState selectedPrinterDevice(
+          PrinterDeviceModel? selectedPrinterDevice) =>
+      this(selectedPrinterDevice: selectedPrinterDevice);
+
+  @override
+  SettingsState printerDeviceModelList(
+          List<PrinterDeviceModel> printerDeviceModelList) =>
+      this(printerDeviceModelList: printerDeviceModelList);
+
+  @override
+  SettingsState message(String? message) => this(message: message);
+
+  @override
+  SettingsState port(String? port) => this(port: port);
+
+  @override
+  SettingsState ipAddress(String? ipAddress) => this(ipAddress: ipAddress);
+
+  @override
+  SettingsState ble(bool? ble) => this(ble: ble);
+
+  @override
+  SettingsState reconnect(bool? reconnect) => this(reconnect: reconnect);
+
+  @override
+  SettingsState paperSize(PaperSize? paperSize) => this(paperSize: paperSize);
+
+  @override
+  SettingsState printerType(PrinterType? printerType) =>
+      this(printerType: printerType);
+
+  @override
+  SettingsState isConnected(bool? isConnected) =>
+      this(isConnected: isConnected);
+
+  @override
+  SettingsState btStatus(BTStatus btStatus) => this(btStatus: btStatus);
+
+  @override
+  SettingsState usbStatus(USBStatus usbStatus) => this(usbStatus: usbStatus);
+
+  @override
+  SettingsState tcpStatus(TCPStatus tcpStatus) => this(tcpStatus: tcpStatus);
+
+  @override
+  SettingsState pendingPrinterTask(List<int>? pendingPrinterTask) =>
+      this(pendingPrinterTask: pendingPrinterTask);
+
+  @override
+  SettingsState showOption(bool showOption) => this(showOption: showOption);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `SettingsState(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// SettingsState(...).copyWith(id: 12, name: "My name")
+  /// ````
+  SettingsState call({
+    Object? selectedPrinterDevice = const $CopyWithPlaceholder(),
+    Object? printerDeviceModelList = const $CopyWithPlaceholder(),
+    Object? message = const $CopyWithPlaceholder(),
+    Object? port = const $CopyWithPlaceholder(),
+    Object? ipAddress = const $CopyWithPlaceholder(),
+    Object? ble = const $CopyWithPlaceholder(),
+    Object? reconnect = const $CopyWithPlaceholder(),
+    Object? paperSize = const $CopyWithPlaceholder(),
+    Object? printerType = const $CopyWithPlaceholder(),
+    Object? isConnected = const $CopyWithPlaceholder(),
+    Object? btStatus = const $CopyWithPlaceholder(),
+    Object? usbStatus = const $CopyWithPlaceholder(),
+    Object? tcpStatus = const $CopyWithPlaceholder(),
+    Object? pendingPrinterTask = const $CopyWithPlaceholder(),
+    Object? showOption = const $CopyWithPlaceholder(),
+  }) {
+    return SettingsState(
+      selectedPrinterDevice:
+          selectedPrinterDevice == const $CopyWithPlaceholder()
+              ? _value.selectedPrinterDevice
+              // ignore: cast_nullable_to_non_nullable
+              : selectedPrinterDevice as PrinterDeviceModel?,
+      printerDeviceModelList:
+          printerDeviceModelList == const $CopyWithPlaceholder() ||
+                  printerDeviceModelList == null
+              ? _value.printerDeviceModelList
+              // ignore: cast_nullable_to_non_nullable
+              : printerDeviceModelList as List<PrinterDeviceModel>,
+      message: message == const $CopyWithPlaceholder()
+          ? _value.message
+          // ignore: cast_nullable_to_non_nullable
+          : message as String?,
+      port: port == const $CopyWithPlaceholder()
+          ? _value.port
+          // ignore: cast_nullable_to_non_nullable
+          : port as String?,
+      ipAddress: ipAddress == const $CopyWithPlaceholder()
+          ? _value.ipAddress
+          // ignore: cast_nullable_to_non_nullable
+          : ipAddress as String?,
+      ble: ble == const $CopyWithPlaceholder()
+          ? _value.ble
+          // ignore: cast_nullable_to_non_nullable
+          : ble as bool?,
+      reconnect: reconnect == const $CopyWithPlaceholder()
+          ? _value.reconnect
+          // ignore: cast_nullable_to_non_nullable
+          : reconnect as bool?,
+      paperSize: paperSize == const $CopyWithPlaceholder()
+          ? _value.paperSize
+          // ignore: cast_nullable_to_non_nullable
+          : paperSize as PaperSize?,
+      printerType: printerType == const $CopyWithPlaceholder()
+          ? _value.printerType
+          // ignore: cast_nullable_to_non_nullable
+          : printerType as PrinterType?,
+      isConnected: isConnected == const $CopyWithPlaceholder()
+          ? _value.isConnected
+          // ignore: cast_nullable_to_non_nullable
+          : isConnected as bool?,
+      btStatus: btStatus == const $CopyWithPlaceholder() || btStatus == null
+          ? _value.btStatus
+          // ignore: cast_nullable_to_non_nullable
+          : btStatus as BTStatus,
+      usbStatus: usbStatus == const $CopyWithPlaceholder() || usbStatus == null
+          ? _value.usbStatus
+          // ignore: cast_nullable_to_non_nullable
+          : usbStatus as USBStatus,
+      tcpStatus: tcpStatus == const $CopyWithPlaceholder() || tcpStatus == null
+          ? _value.tcpStatus
+          // ignore: cast_nullable_to_non_nullable
+          : tcpStatus as TCPStatus,
+      pendingPrinterTask: pendingPrinterTask == const $CopyWithPlaceholder()
+          ? _value.pendingPrinterTask
+          // ignore: cast_nullable_to_non_nullable
+          : pendingPrinterTask as List<int>?,
+      showOption:
+          showOption == const $CopyWithPlaceholder() || showOption == null
+              ? _value.showOption
+              // ignore: cast_nullable_to_non_nullable
+              : showOption as bool,
+    );
+  }
+}
+
+extension $SettingsStateCopyWith on SettingsState {
+  /// Returns a callable class that can be used as follows: `instanceOfSettingsState.copyWith(...)` or like so:`instanceOfSettingsState.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$SettingsStateCWProxy get copyWith => _$SettingsStateCWProxyImpl(this);
+}

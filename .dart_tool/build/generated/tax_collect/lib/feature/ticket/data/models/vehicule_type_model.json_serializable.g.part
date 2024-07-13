@@ -1,0 +1,17 @@
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+VehiculeTypeModel _$VehiculeTypeModelFromJson(Map<String, dynamic> json) =>
+    VehiculeTypeModel(
+      id: (json['id'] as num?)?.toInt(),
+      type: json['type'] as String?,
+      price: (json['price'] as num?)?.toDouble(),
+    );
+
+Map<String, dynamic> _$VehiculeTypeModelToJson(VehiculeTypeModel instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'type': instance.type,
+      'price': instance.price,
+    };

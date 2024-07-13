@@ -1,0 +1,75 @@
+// **************************************************************************
+// CopyWithGenerator
+// **************************************************************************
+
+abstract class _$HistoryStateCWProxy {
+  HistoryState message(String? message);
+
+  HistoryState paymentList(List<PaymentEntity>? paymentList);
+
+  HistoryState blocState(BlocState blocState);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `HistoryState(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// HistoryState(...).copyWith(id: 12, name: "My name")
+  /// ````
+  HistoryState call({
+    String? message,
+    List<PaymentEntity>? paymentList,
+    BlocState? blocState,
+  });
+}
+
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfHistoryState.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfHistoryState.copyWith.fieldName(...)`
+class _$HistoryStateCWProxyImpl implements _$HistoryStateCWProxy {
+  const _$HistoryStateCWProxyImpl(this._value);
+
+  final HistoryState _value;
+
+  @override
+  HistoryState message(String? message) => this(message: message);
+
+  @override
+  HistoryState paymentList(List<PaymentEntity>? paymentList) =>
+      this(paymentList: paymentList);
+
+  @override
+  HistoryState blocState(BlocState blocState) => this(blocState: blocState);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `HistoryState(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// HistoryState(...).copyWith(id: 12, name: "My name")
+  /// ````
+  HistoryState call({
+    Object? message = const $CopyWithPlaceholder(),
+    Object? paymentList = const $CopyWithPlaceholder(),
+    Object? blocState = const $CopyWithPlaceholder(),
+  }) {
+    return HistoryState(
+      message: message == const $CopyWithPlaceholder()
+          ? _value.message
+          // ignore: cast_nullable_to_non_nullable
+          : message as String?,
+      paymentList: paymentList == const $CopyWithPlaceholder()
+          ? _value.paymentList
+          // ignore: cast_nullable_to_non_nullable
+          : paymentList as List<PaymentEntity>?,
+      blocState: blocState == const $CopyWithPlaceholder() || blocState == null
+          ? _value.blocState
+          // ignore: cast_nullable_to_non_nullable
+          : blocState as BlocState,
+    );
+  }
+}
+
+extension $HistoryStateCopyWith on HistoryState {
+  /// Returns a callable class that can be used as follows: `instanceOfHistoryState.copyWith(...)` or like so:`instanceOfHistoryState.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$HistoryStateCWProxy get copyWith => _$HistoryStateCWProxyImpl(this);
+}
