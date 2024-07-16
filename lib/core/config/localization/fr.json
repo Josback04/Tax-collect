@@ -33,7 +33,7 @@
   "profile": "Mon Profil",
   "profile_desc": "Configurer ou voir les informations de votre compte",
   "printer_desc": "Sélectionnez, connectez et configurez l'imprimante thermique avec sa taille de papier",
-  "language_desc": "Sélectionnez la langue que vous préférez supportée par l'application @:title",
+  "language_desc": "Sélectionnez la langue de votre choix pour l'application @:title",
   "app_version_arg": "version de l'application : {}",
   "language": "Langue",
   "select_language": "Veuillez sélectionner votre langue",
@@ -42,7 +42,7 @@
     "fr": "Français \uD83C\uDDEB\uD83C\uDDF7"
   },
   "theme": "Thème",
-  "select_theme": "Veuillez sélectionner le mode thème de l'application @:title",
+  "select_theme": "Veuillez sélectionner le thème de l'application @:title",
   "theme_select": {
     "light": "Clair",
     "dark": "Sombre",
