@@ -9,6 +9,8 @@ part of 'ticket_bloc.dart';
 abstract class _$TicketStateCWProxy {
   TicketState blocState(BlocState blocState);
 
+  TicketState paymentState(BlocState paymentState);
+
   TicketState plateNumber(String? plateNumber);
 
   TicketState message(String? message);
@@ -20,6 +22,8 @@ abstract class _$TicketStateCWProxy {
   TicketState selectedVehiculeTypeEntity(
       VehiculeTypeEntity? selectedVehiculeTypeEntity);
 
+  TicketState statusCode(int? statusCode);
+
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `TicketState(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -28,11 +32,13 @@ abstract class _$TicketStateCWProxy {
   /// ````
   TicketState call({
     BlocState? blocState,
+    BlocState? paymentState,
     String? plateNumber,
     String? message,
     String? phoneNumber,
     PaymentEntity? paymentEntityResult,
     VehiculeTypeEntity? selectedVehiculeTypeEntity,
+    int? statusCode,
   });
 }
 
@@ -44,6 +50,10 @@ class _$TicketStateCWProxyImpl implements _$TicketStateCWProxy {
 
   @override
   TicketState blocState(BlocState blocState) => this(blocState: blocState);
+
+  @override
+  TicketState paymentState(BlocState paymentState) =>
+      this(paymentState: paymentState);
 
   @override
   TicketState plateNumber(String? plateNumber) =>
@@ -66,6 +76,9 @@ class _$TicketStateCWProxyImpl implements _$TicketStateCWProxy {
       this(selectedVehiculeTypeEntity: selectedVehiculeTypeEntity);
 
   @override
+  TicketState statusCode(int? statusCode) => this(statusCode: statusCode);
+
+  @override
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `TicketState(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -75,17 +88,24 @@ class _$TicketStateCWProxyImpl implements _$TicketStateCWProxy {
   /// ````
   TicketState call({
     Object? blocState = const $CopyWithPlaceholder(),
+    Object? paymentState = const $CopyWithPlaceholder(),
     Object? plateNumber = const $CopyWithPlaceholder(),
     Object? message = const $CopyWithPlaceholder(),
     Object? phoneNumber = const $CopyWithPlaceholder(),
     Object? paymentEntityResult = const $CopyWithPlaceholder(),
     Object? selectedVehiculeTypeEntity = const $CopyWithPlaceholder(),
+    Object? statusCode = const $CopyWithPlaceholder(),
   }) {
     return TicketState(
       blocState: blocState == const $CopyWithPlaceholder() || blocState == null
           ? _value.blocState
           // ignore: cast_nullable_to_non_nullable
           : blocState as BlocState,
+      paymentState:
+          paymentState == const $CopyWithPlaceholder() || paymentState == null
+              ? _value.paymentState
+              // ignore: cast_nullable_to_non_nullable
+              : paymentState as BlocState,
       plateNumber: plateNumber == const $CopyWithPlaceholder()
           ? _value.plateNumber
           // ignore: cast_nullable_to_non_nullable
@@ -107,6 +127,10 @@ class _$TicketStateCWProxyImpl implements _$TicketStateCWProxy {
               ? _value.selectedVehiculeTypeEntity
               // ignore: cast_nullable_to_non_nullable
               : selectedVehiculeTypeEntity as VehiculeTypeEntity?,
+      statusCode: statusCode == const $CopyWithPlaceholder()
+          ? _value.statusCode
+          // ignore: cast_nullable_to_non_nullable
+          : statusCode as int?,
     );
   }
 }

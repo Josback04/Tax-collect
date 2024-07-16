@@ -35,183 +35,210 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: BlocListener<AuthBloc, AuthState>(
-          listener: (context, state) {
-            switch (state.loginState) {
-              case AuthenticationState.loading:
-              case AuthenticationState.processing:
-                showLoading(context);
-                break;
-              case AuthenticationState.failure:
-                context.router.maybePop();
-                showSnackBar(
-                  context,
-                  text: context.tr(
-                    state.message ?? LocaleKeys.error_happened,
-                  ),
-                  type: SnackBarType.danger,
-                  hideCurrentSnackBar: false,
-                );
-                break;
-              case AuthenticationState.authenticated:
-                context.router.maybePop();
-                context.router.replace(const MenuRoute());
-                break;
-              case AuthenticationState.unauthenticated:
-              default:
-                break;
-            }
-          },
-          child: Builder(
-            builder: (context) {
-              return ListView(
-                children: [
-                  const Gap(kSizeMd),
-                  Column(
-                    children: [
-                      Container(
-                        constraints: maxWidthConstraints,
-                        child: Card(
-                          child: Padding(
-                            padding: const EdgeInsets.all(kSizeSm),
-                            child: Column(
-                              children: [
-                                Text(
-                                  context.tr(LocaleKeys.connection),
-                                  style: Theme.of(context).textTheme.titleLarge,
-                                ),
-                                const Gap(kSizeLg),
-                                Form(
-                                  key: formKey,
-                                  child: Column(
-                                    children: [
-                                      TextFormField(
-                                        textInputAction: TextInputAction.next,
-                                        focusNode: focusNodeUsername,
-                                        controller: usernameTextController,
-                                        decoration: InputDecoration(
-                                          labelText:
-                                              context.tr(LocaleKeys.username),
-                                          hintText:
-                                              context.tr(LocaleKeys.username),
-                                          contentPadding:
-                                              const EdgeInsets.symmetric(
-                                                  horizontal: kSizeMdx,
-                                                  vertical: kSizeMd),
-                                          border: OutlineInputBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(
-                                                      kSizeMd)),
+    return PopScope(
+      onPopInvoked: (didPop) {
+        if (didPop) {
+          return;
+        }
+      },
+      child: Scaffold(
+        body: SafeArea(
+          child: BlocListener<AuthBloc, AuthState>(
+            listener: (context, state) {
+              switch (state.loginState) {
+                case AuthenticationState.loading:
+                case AuthenticationState.processing:
+                  showLoading(context);
+                  break;
+                case AuthenticationState.failure:
+                  context.router.maybePop();
+                  showSnackBar(
+                    context,
+                    text: context.tr(
+                      state.message ?? LocaleKeys.error_happened,
+                    ),
+                    type: SnackBarType.danger,
+                    hideCurrentSnackBar: false,
+                  );
+                  break;
+                case AuthenticationState.authenticated:
+                  context.router.maybePop();
+                  context.router.replace(const MenuRoute());
+                  break;
+                case AuthenticationState.unauthenticated:
+                default:
+                  break;
+              }
+            },
+            child: Builder(
+              builder: (context) {
+                return ListView(
+                  children: [
+                    const Gap(kSizeMd),
+                    Column(
+                      children: [
+                        Container(
+                          constraints: maxWidthConstraints,
+                          child: Card(
+                            child: Padding(
+                              padding: const EdgeInsets.all(kSizeSm),
+                              child: Column(
+                                children: [
+                                  Text(
+                                    context.tr(LocaleKeys.connection),
+                                    style:
+                                        Theme.of(context).textTheme.titleLarge,
+                                  ),
+                                  const Gap(kSizeLg),
+                                  Form(
+                                    key: formKey,
+                                    child: Column(
+                                      children: [
+                                        TextFormField(
+                                          textInputAction: TextInputAction.next,
+                                          focusNode: focusNodeUsername,
+                                          controller: usernameTextController,
+                                          decoration: InputDecoration(
+                                            labelText:
+                                                context.tr(LocaleKeys.username),
+                                            hintText:
+                                                context.tr(LocaleKeys.username),
+                                            contentPadding:
+                                                const EdgeInsets.symmetric(
+                                                    horizontal: kSizeMdx,
+                                                    vertical: kSizeMd),
+                                            border: OutlineInputBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                        kSizeMd)),
+                                          ),
+                                          onFieldSubmitted: (_) =>
+                                              focusNodePassword.requestFocus(),
+                                          validator: (value) =>
+                                              const NameValidator.pure()
+                                                  .validator(value ?? '')
+                                                  ?.text(context),
                                         ),
-                                        onFieldSubmitted: (_) =>
-                                            focusNodePassword.requestFocus(),
-                                        validator: (value) =>
-                                            const NameValidator.pure()
-                                                .validator(value ?? '')
-                                                ?.text(context),
-                                      ),
-                                      const Gap(kSizeMd),
-                                      TextFormField(
-                                        textInputAction: TextInputAction.send,
-                                        focusNode: focusNodePassword,
-                                        controller: passwordTextController,
-                                        obscureText: !passwordVisible,
-                                        decoration: InputDecoration(
-                                          labelText:
-                                              context.tr(LocaleKeys.password),
-                                          hintText:
-                                              context.tr(LocaleKeys.password),
-                                          contentPadding:
-                                              const EdgeInsets.symmetric(
-                                                  horizontal: kSizeMdx,
-                                                  vertical: kSizeMd),
-                                          border: OutlineInputBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(
-                                                      kSizeMd)),
-                                          suffixIcon: IconButton(
-                                              icon: Icon(
-                                                passwordVisible
-                                                    ? Icons.visibility
-                                                    : Icons.visibility_off,
-                                              ),
-                                              onPressed: () {
-                                                setState(() {
-                                                  passwordVisible =
-                                                      !passwordVisible;
-                                                });
-                                              }),
+                                        const Gap(kSizeMd),
+                                        TextFormField(
+                                          textInputAction: TextInputAction.send,
+                                          focusNode: focusNodePassword,
+                                          controller: passwordTextController,
+                                          obscureText: !passwordVisible,
+                                          decoration: InputDecoration(
+                                            labelText:
+                                                context.tr(LocaleKeys.password),
+                                            hintText:
+                                                context.tr(LocaleKeys.password),
+                                            contentPadding:
+                                                const EdgeInsets.symmetric(
+                                                    horizontal: kSizeMdx,
+                                                    vertical: kSizeMd),
+                                            border: OutlineInputBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                        kSizeMd)),
+                                            suffixIcon: IconButton(
+                                                icon: Icon(
+                                                  passwordVisible
+                                                      ? Icons.visibility
+                                                      : Icons.visibility_off,
+                                                ),
+                                                onPressed: () {
+                                                  setState(() {
+                                                    passwordVisible =
+                                                        !passwordVisible;
+                                                  });
+                                                }),
+                                          ),
+                                          validator: (value) =>
+                                              const PasswordValidator.pure()
+                                                  .validator(value ?? '')
+                                                  ?.text(context),
+                                          onFieldSubmitted: (password) {
+                                            if (!formKey.currentState!
+                                                .validate()) {
+                                              return;
+                                            }
+                                            context.read<AuthBloc>().add(
+                                                  LoginEvent(
+                                                    username:
+                                                        usernameTextController
+                                                            .text
+                                                            .trim(),
+                                                    password:
+                                                        passwordTextController
+                                                            .text
+                                                            .trim(),
+                                                  ),
+                                                );
+                                          },
                                         ),
-                                        validator: (value) =>
-                                            const PasswordValidator.pure()
-                                                .validator(value ?? '')
-                                                ?.text(context),
-                                        onFieldSubmitted: (password) {
-                                          if (!formKey.currentState!
-                                              .validate()) {
-                                            return;
-                                          }
-                                          context.read<AuthBloc>().add(
-                                                LoginEvent(
-                                                  username:
-                                                      usernameTextController
-                                                          .text
-                                                          .trim(),
-                                                  password:
-                                                      passwordTextController
-                                                          .text
-                                                          .trim(),
-                                                ),
-                                              );
-                                        },
-                                      ),
-                                      const Gap(kSizeLg),
-                                      FilledButton(
-                                        onPressed: () {
-                                          if (!formKey.currentState!
-                                              .validate()) {
-                                            return;
-                                          }
-                                          context.read<AuthBloc>().add(
-                                                LoginEvent(
-                                                  username:
-                                                      usernameTextController
-                                                          .text
-                                                          .trim(),
-                                                  password:
-                                                      passwordTextController
-                                                          .text
-                                                          .trim(),
-                                                ),
-                                              );
-                                        },
-                                        child: Padding(
-                                          padding:
-                                              const EdgeInsets.all(kSizeMd),
-                                          child: Text(
-                                            LocaleKeys.login.tr().toUpperCase(),
+                                        const Gap(kSizeLg),
+                                        FilledButton(
+                                          onPressed: () {
+                                            if (!formKey.currentState!
+                                                .validate()) {
+                                              return;
+                                            }
+                                            context.read<AuthBloc>().add(
+                                                  LoginEvent(
+                                                    username:
+                                                        usernameTextController
+                                                            .text
+                                                            .trim(),
+                                                    password:
+                                                        passwordTextController
+                                                            .text
+                                                            .trim(),
+                                                  ),
+                                                );
+                                          },
+                                          child: Padding(
+                                            padding:
+                                                const EdgeInsets.all(kSizeMd),
+                                            child: Text(
+                                              LocaleKeys.login
+                                                  .tr()
+                                                  .toUpperCase(),
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                      const Gap(kSizeMd),
-                                    ],
+                                        const Gap(kSizeMd),
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
-                  )
-                ],
-              );
-            },
+                      ],
+                    )
+                  ],
+                );
+              },
+            ),
           ),
         ),
       ),
     );
+  }
+
+  void _showBackDialog() {
+    showDialog<void>(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text('Vous êtes sur le point de quitter?'),
+            content: const Text('êtes vous sûr ?'),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(context),
+                child: const Text('Annuler'),
+              )
+            ],
+          );
+        });
   }
 }

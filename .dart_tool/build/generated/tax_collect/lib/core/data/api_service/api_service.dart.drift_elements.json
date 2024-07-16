@@ -1,1 +1,0 @@
-{"valid_import":true,"imports":[{"uri":"package:get_it/get_it.dart","transitive":false},{"uri":"package:shared_preferences/shared_preferences.dart","transitive":false},{"uri":"package:tax_collect/core/utils/shared_preference_key.dart","transitive":false}],"elements":[]}

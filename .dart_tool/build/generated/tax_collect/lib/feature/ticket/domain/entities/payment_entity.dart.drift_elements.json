@@ -1,1 +1,0 @@
-{"valid_import":true,"imports":[{"uri":"package:equatable/equatable.dart","transitive":false},{"uri":"package:tax_collect/feature/ticket/data/models/payment_model.dart","transitive":false},{"uri":"package:tax_collect/feature/ticket/domain/entities/vehicule_type_entity.dart","transitive":false}],"elements":[]}

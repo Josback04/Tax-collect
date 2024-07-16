@@ -1,1 +1,0 @@
-{"valid_import":true,"imports":[{"uri":"package:hive/hive.dart","transitive":false},{"uri":"package:tax_collect/feature/settings/data/models/printer_device_model.dart","transitive":false},{"uri":"package:thermal_printer/thermal_printer.dart","transitive":false}],"elements":[]}
