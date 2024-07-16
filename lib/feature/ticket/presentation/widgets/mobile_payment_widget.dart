@@ -120,6 +120,11 @@ class _MobilePaymentWidgetState extends State<MobilePaymentWidget> {
                                 if (!formKey.currentState!.validate()) {
                                   return;
                                 }
+                                PaymentEvent(
+                                    montant:
+                                        state.selectedVehiculeTypeEntity?.price,
+                                    phone:
+                                        textEditingControllerPhone.value.text);
                               },
                               child: Padding(
                                 padding: const EdgeInsets.all(kSizeMd),

@@ -68,3 +68,16 @@ class EnterPhoneNumberEvent extends TicketEvent {
         phoneNumber,
       ];
 }
+
+class PaymentEvent extends TicketEvent {
+  const PaymentEvent({required this.montant, required this.phone});
+  final String phone;
+  final double? montant;
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [
+        phone,
+        montant,
+      ];
+}
