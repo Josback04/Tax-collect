@@ -6,8 +6,9 @@ class PayUsecase extends UseCase<PaymentResponce?, Map<String, dynamic>> {
   PayUsecase({required this.repository});
 
   final PaymentRepository repository;
+
   @override
-  Future<PaymentResponce?> call(Map<String, dynamic> params) async =>
+  Future<PaymentResponce?> call(Map<String, dynamic>? params) async =>
       // TODO: implement call
       repository.pay(queryParameters: params);
 }
