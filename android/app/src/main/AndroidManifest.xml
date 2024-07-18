@@ -39,6 +39,9 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+            <meta-data
+            android:name="flutterEntrypoint"
+            android:value="main" />
 
         <receiver
             android:name="com.codingdevs.thermal_printer.usb.UsbReceiver"
