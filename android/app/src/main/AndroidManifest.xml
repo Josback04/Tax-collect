@@ -6,7 +6,6 @@
     <application
         android:label="Tax Collect"
         android:name="${applicationName}"
-        android:debuggable="false"
         android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
