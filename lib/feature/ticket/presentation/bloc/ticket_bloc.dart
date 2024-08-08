@@ -6,7 +6,10 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tax_collect/core/utils/error_handler.dart';
 import 'package:tax_collect/core/utils/state_enum.dart';
+import 'package:tax_collect/feature/ticket/data/data_sources/payment_source.dart';
+import 'package:tax_collect/feature/ticket/data/repositories/payment_repository_impl.dart';
 import 'package:tax_collect/feature/ticket/domain/entities/vehicule_type_entity.dart';
+import 'package:tax_collect/feature/ticket/domain/use_cases/pay_usecase.dart';
 import 'package:tax_collect/feature/ticket/domain/use_cases/save_payment.dart';
 import 'package:tax_collect/generated/locale_keys.g.dart';
 
@@ -30,6 +33,7 @@ class TicketBloc extends Bloc<TicketEvent, TicketState> {
     on<SelectVehiculeEvent>(_onSelectVehicule);
     on<EnterPlateNumberEvent>(_onEnterPlateNumberEvent);
     on<EnterPhoneNumberEvent>(_onEnterPhoneNumberEvent);
+    // on<PaymentEvent>(_PaymentEvent);
   }
 
   FutureOr<void> _onInitTicketEvent(
@@ -122,4 +126,15 @@ class TicketBloc extends Bloc<TicketEvent, TicketState> {
   ) async {
     emit(state.copyWith(phoneNumber: event.phoneNumber));
   }
+
+  // FutureOr<void> _PaymentEvent(
+  //   PaymentEvent event,
+  //   Emitter<TicketState> emit,
+  // ) async {
+  //   emit(state.copyWith(
+  //       blocState: BlocState.loading, message: LocaleKeys.please_wait));
+
+  //   await errorHandler(() async =>
+  //       // PayUsecase(repository: PaymentRepositoryImpl(source:PaymentSource(dio: dio) )));
+  // }
 }

@@ -11,6 +11,7 @@ import 'package:tax_collect/core/utils/util.dart';
 import 'package:tax_collect/core/utils/validator/print_helper.dart';
 import 'package:tax_collect/core/widgets/image_mobile_money_provider.dart';
 import 'package:tax_collect/feature/settings/presentation/bloc/settings_bloc.dart';
+import 'package:tax_collect/feature/ticket/presentation/bloc/payment_bloc/payment_bloc.dart';
 import 'package:tax_collect/feature/ticket/presentation/bloc/ticket_bloc.dart';
 import 'package:tax_collect/generated/assets.gen.dart';
 
@@ -120,11 +121,10 @@ class _MobilePaymentWidgetState extends State<MobilePaymentWidget> {
                                 if (!formKey.currentState!.validate()) {
                                   return;
                                 }
-                                PaymentEvent(
-                                    montant:
-                                        state.selectedVehiculeTypeEntity?.price,
-                                    phone:
-                                        textEditingControllerPhone.value.text);
+                                DoPaymentEvent(
+                                  amount: 1000,
+                                  phone: textEditingControllerPhone.text,
+                                );
                               },
                               child: Padding(
                                 padding: const EdgeInsets.all(kSizeMd),
