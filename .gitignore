@@ -99,3 +99,5 @@ app.*.map.json
 **/ios/ServiceDefinitions.json
 **/ios/Runner/GeneratedPluginRegistrant.*
 .flutter-plugins-dependencies
+.flutter-plugins-dependencies
+ios/Runner.xcodeproj/project.pbxproj
