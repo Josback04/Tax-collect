@@ -159,8 +159,9 @@ class _ProfileConfigPageState extends State<ProfileConfigPage> {
                     style: FilledButton.styleFrom(backgroundColor: Colors.red),
                     onPressed: () async {
                       //TODO: Make a use case for logout
-                      context.router.replace(const LoginRoute());
+                      context.router.replaceAll([const LoginRoute()]);
                       await GetIt.I<SharedPreferences>().clear();
+                      await Future.delayed(const Duration(seconds: 2));
                     },
                     child: Padding(
                       padding: const EdgeInsets.all(kSizeMd),
