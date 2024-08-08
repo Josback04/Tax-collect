@@ -6,6 +6,8 @@ enum AuthenticationState {
   failure,
 }
 
+enum TimerStatus { initial, start, stop }
+
 enum BlocState { initial, loading, failed, success }
 
 extension AuthenticationStateX on AuthenticationState {
