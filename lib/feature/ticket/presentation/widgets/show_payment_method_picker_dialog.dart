@@ -42,22 +42,22 @@ Future<void> showPaymentMethodPickerDialog(BuildContext context) {
                               ),
                             );
                       }),
-                  CardMethodPickerWidget(
-                    imageAssetName: Assets.images.mobilePayment.path,
-                    title: context.tr(LocaleKeys.mobile_payment),
-                    onTap: () {
-                      context.router.maybePopTop().whenComplete(
-                            () => showDialog(
-                              context: context,
-                              useSafeArea: false,
-                              barrierDismissible: false,
-                              builder: (builder) => const ShowResponsiveDialog(
-                                MobilePaymentWidget(),
-                              ),
-                            ),
-                          );
-                    },
-                  ),
+                  // CardMethodPickerWidget(
+                  //   imageAssetName: Assets.images.mobilePayment.path,
+                  //   title: context.tr(LocaleKeys.mobile_payment),
+                  //   onTap: () {
+                  //     context.router.maybePopTop().whenComplete(
+                  //           () => showDialog(
+                  //             context: context,
+                  //             useSafeArea: false,
+                  //             barrierDismissible: false,
+                  //             builder: (builder) => const ShowResponsiveDialog(
+                  //               MobilePaymentWidget(),
+                  //             ),
+                  //           ),
+                  //         );
+                  //   },
+                  // ),
                 ],
               ),
               const Gap(kSizeSm),
