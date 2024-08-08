@@ -20,10 +20,16 @@ import 'package:tax_collect/feature/initializer/presentation/bloc/initializer_bl
 import 'package:tax_collect/feature/report/presentation/bloc/report_bloc.dart';
 import 'package:tax_collect/feature/settings/data/models/printer_hive_box.dart';
 import 'package:tax_collect/feature/settings/presentation/bloc/settings_bloc.dart';
+import 'package:tax_collect/feature/ticket/data/data_sources/payment_source.dart';
 import 'package:tax_collect/feature/ticket/data/data_sources/ticket_local_source.dart';
 import 'package:tax_collect/feature/ticket/data/data_sources/ticket_local_source_impl.dart';
+import 'package:tax_collect/feature/ticket/data/repositories/payment_repository_impl.dart';
+import 'package:tax_collect/feature/ticket/domain/repositories/payment_repository.dart';
 import 'package:tax_collect/feature/ticket/domain/repositories/ticket_repository.dart';
+import 'package:tax_collect/feature/ticket/domain/use_cases/get_pay_usecase.dart';
+import 'package:tax_collect/feature/ticket/domain/use_cases/pay_usecase.dart';
 import 'package:tax_collect/feature/ticket/domain/use_cases/save_payment.dart';
+import 'package:tax_collect/feature/ticket/presentation/bloc/payment_bloc/payment_bloc.dart';
 import 'package:tax_collect/feature/ticket/presentation/bloc/ticket_bloc.dart';
 import 'package:thermal_printer/esc_pos_utils_platform/src/capability_profile.dart';
 import 'package:thermal_printer/thermal_printer.dart';
@@ -64,6 +70,9 @@ Future<void> injectionContainer() async {
     () => TicketBloc(savePayment: sl()),
   );
 
+  sl.registerFactory<PaymentBloc>(
+      () => PaymentBloc(paymentRepositoryImpl: sl()));
+
   ///Feature - HistoryBloc
   sl.registerFactory<HistoryBloc>(
     () => HistoryBloc(getPaymentList: sl()),
@@ -96,6 +105,10 @@ Future<void> injectionContainer() async {
     ),
   );
 
+  sl.registerLazySingleton<PaymentSource>(() => PaymentSource(dio: sl()));
+  sl.registerLazySingleton<GetUsecase>(() => GetUsecase(repository: sl()));
+  sl.registerLazySingleton<PayUsecase>(() => PayUsecase(repository: sl()));
+
   ///Feature - History
   sl.registerLazySingleton<GetPaymentList>(
     () => GetPaymentList(
@@ -119,6 +132,9 @@ Future<void> injectionContainer() async {
     ),
   );
 
+  sl.registerLazySingleton<PaymentRepository>(
+      () => PaymentRepositoryImpl(source: sl()));
+
   /// History
   sl.registerLazySingleton<HistoryRepository>(
     () => HistoryRepositoryImpl(
@@ -141,6 +157,12 @@ Future<void> injectionContainer() async {
       database: sl(),
     ),
   );
+
+  // sl.registerLazySingleton<PaymentSource>(
+  //   () => PaymentSource(
+  //     dio: sl(),
+  //   ),
+  // );
 
   ///Feature -Auth
   sl.registerLazySingleton<HistoryLocalSource>(
